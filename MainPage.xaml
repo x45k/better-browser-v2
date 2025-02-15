@@ -3,18 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="better_browser.MainPage"
              NavigationPage.HasNavigationBar="False">
-    <Grid RowDefinitions="Auto,*">
-        <VerticalStackLayout Grid.Row="0" Padding="10" Spacing="10" BackgroundColor="LightGray">
-            <HorizontalStackLayout>
-                <Button Text="Back" Clicked="OnBackClicked" IsEnabled="{Binding CanGoBack, Source={x:Reference webView}}" />
-                <Button Text="Forward" Clicked="OnForwardClicked" IsEnabled="{Binding CanGoForward, Source={x:Reference webView}}" />
-                <Button Text="Refresh" Clicked="OnRefreshClicked" />
-                <Entry x:Name="urlEntry" Placeholder="Enter URL..." HorizontalOptions="FillAndExpand" Completed="OnGoClicked" />
-                <Button Text="Go" Clicked="OnGoClicked" />
+    <Grid RowDefinitions="Auto,Auto,*">
+        
+        <HorizontalStackLayout Grid.Row="0" Padding="5" BackgroundColor="LightGray" x:Name="tabBar">
+            <ScrollView Orientation="Horizontal">
+                <HorizontalStackLayout x:Name="tabContainer" Spacing="5"/>
+            </ScrollView>
+            <Button Text="+" Clicked="OnNewTabClicked" FontSize="18" WidthRequest="40"/>
+        </HorizontalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1" Padding="5" BackgroundColor="LightGray">
+            <HorizontalStackLayout Spacing="5">
+                <Button Text="◄" Clicked="OnBackClicked" IsEnabled="{Binding CanGoBack, Source={x:Reference webView}}" WidthRequest="40"/>
+                <Button Text="►" Clicked="OnForwardClicked" IsEnabled="{Binding CanGoForward, Source={x:Reference webView}}" WidthRequest="40"/>
+                <Button Text="⟳" Clicked="OnRefreshClicked" WidthRequest="40"/>
+                <Entry x:Name="urlEntry" Placeholder="Enter URL..." HorizontalOptions="FillAndExpand" Completed="OnGoClicked"/>
+                <Button Text="Go" Clicked="OnGoClicked" WidthRequest="40"/>
+                <Switch x:Name="tabToggle" Toggled="OnTabToggleToggled"/>
             </HorizontalStackLayout>
         </VerticalStackLayout>
 
-        <WebView x:Name="webView" Source="https://new-tab.x45k.dev" Grid.Row="1" 
-                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        <WebView x:Name="webView" Source="https://new-tab.x45k.dev" Grid.Row="2"
+                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
     </Grid>
 </ContentPage>
