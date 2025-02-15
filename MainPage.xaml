@@ -14,7 +14,7 @@
             </HorizontalStackLayout>
         </VerticalStackLayout>
 
-        <WebView x:Name="webView" Source="https://www.google.com" Grid.Row="1" 
+        <WebView x:Name="webView" Source="https://new-tab.x45k.dev" Grid.Row="1" 
                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
     </Grid>
 </ContentPage>

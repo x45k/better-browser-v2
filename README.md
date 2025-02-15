@@ -3,15 +3,12 @@ go to the [releases page](https://github.com/x45k/better-browser-v2/releases) an
 
 # is the v1 or v2 version better
 [v1](https://github.com/x45k/better-browser):
-> has tab support
+- has tab support
 
-[v2](https://github.com/x45k/better-browser-v2):
-> standalone exe rather than the giant mess of folders in v1
-> built on webview2
-> cleaner ui
-
-# i want the source code
-i cba to put it into this repo cause i messed something up and i dont wanna spend the time fixing it, so just ask me for it if you want it
+[v2](https://github.com/x45k/better-browser-v2):  
+- Standalone EXE rather than the giant mess of folders in v1  
+- Built on WebView2  
+- Cleaner UI  
 
 # commands (ignore if you dont know what your doing):
 
