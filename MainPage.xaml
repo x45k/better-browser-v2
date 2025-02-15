@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="better_browser.MainPage"
+             NavigationPage.HasNavigationBar="False">
+    <Grid RowDefinitions="Auto,*">
+        <VerticalStackLayout Grid.Row="0" Padding="10" Spacing="10" BackgroundColor="LightGray">
+            <HorizontalStackLayout>
+                <Button Text="Back" Clicked="OnBackClicked" IsEnabled="{Binding CanGoBack, Source={x:Reference webView}}" />
+                <Button Text="Forward" Clicked="OnForwardClicked" IsEnabled="{Binding CanGoForward, Source={x:Reference webView}}" />
+                <Button Text="Refresh" Clicked="OnRefreshClicked" />
+                <Entry x:Name="urlEntry" Placeholder="Enter URL..." HorizontalOptions="FillAndExpand" Completed="OnGoClicked" />
+                <Button Text="Go" Clicked="OnGoClicked" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+        <WebView x:Name="webView" Source="https://www.google.com" Grid.Row="1" 
+                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+    </Grid>
+</ContentPage>
